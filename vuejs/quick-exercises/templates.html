@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Understanding Templates</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- This forces the DOM to only use the initial/original value -->
+        <h1 v-once>{{ title }}</h1>
+
+        <!-- You cannot use curly braces in HTML elements / attributes | <a href="{{ link }}">Duck Duck Go!</a> -->
+        <!-- Instead you need to tell Vue to bind the property to something from the Vue instance | <a v-bind:href="link">Duck Duck Go!</a> -->
+        <p>{{ sayHello() }} - <a v-bind:href="link">Duck Duck Go!</a></p>
+        <hr>
+        
+        <!-- The below will output a string and not an actual link element, which is awesome 😍 | No xss -->
+        <p>{{ finishedLink }}</p>
+
+        <!-- There are moments when you need this however, so there is a way 🔓 | 😱 xss -->
+        <p v-html="finishedLink"></p>
+
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello World',
+            link: 'https://duck.com',
+            finishedLink: '<a href="https://duck.com">Duck Duck Go!</a>',
+        },
+        methods: {
+            sayHello: function () {
+                // Important 
+                // 1. Return needs to be something that the DOM accepts (string)
+                // 2. The function needs to be called the same way you would access data from the Vue instance
+                // return 'Hello!';
+
+                // When returning data attributes using title would not work because we are currently in the Vue instance
+                // Therefore you need to use this.title instead of title like it is outside of the Vue instance
+                //this.title = 'Hello!';
+                return this.title;
+            }
+        }
+    });
+</script>
+
+</html>

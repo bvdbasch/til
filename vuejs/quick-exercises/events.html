@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listening to events</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../spectre.min.css">
+    <style>
+        body {
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <hr>
+        <header><kbd>Click</kbd> on the button to increment the counter</header><br>
+        <!-- Vue also has a default event argument called $event -->
+        <!-- <button v-on:click="increment(2, $event)">Click me</button> -->
+
+        <!-- Vue can also directly parse simple JS statements provided that 
+         1. It only has ONE (1) expression
+         2. Does not contain an if or loop etc...
+         3. Is not used in a directive
+        -->
+        <button class="btn" v-on:click="counter++">Click me</button>
+        <br><br>
+        <p>{{ counter < 10 ? counter : "That's too much man!" }}</p>
+        <hr>
+        <header>Mouse over the line below to update the coordinates</header><br>
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+            <!-- Vue also has support for event modifiers | This avoids the need for dummy methods -->
+            <!-- Event modifiers may also be chained. for example .stop.prevent -->
+            - <span v-on:mousemove.stop>DEAD SPOT!</span>
+        </p>
+        <hr>
+        <header>Enter something in the field below and confirm with <kbd>enter ⏎</kbd> to show an alert with the text
+            you've typed!</header><br>
+        <input type="text" v-on:keyup.enter="confirm($event)">
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            x: 0,
+            y: 0,
+        },
+        methods: {
+            increment: function (ammount, event) {
+                this.counter += ammount;
+            },
+            updateCoordinates: function (event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            confirm: function (event) {
+                alert(event.target.value);
+            }
+        }
+    });
+</script>
+
+</html>

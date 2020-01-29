@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../spectre.min.css">
+    <style>
+        body {
+            margin: 1rem;
+        }
+
+        .demo {
+            width: 110px;
+            height: 110px;
+            margin: 10px;
+            display: inline-block;
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+    <title>Dynamic Styling with CSS Classes</title>
+</head>
+
+<body>
+    <div id="app">
+        <hr>
+        <h3>Attaching css dynamically using Vue</h3>
+        <!-- Here we attach whatever it is currently not -->
+        <!-- Note that with :class we are using VueJS to manipulate the DOM and not re-using the class attribute -->
+        <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}">RED</div>
+        <div class="demo" @click="attachBlue = !attachBlue" :class="{blue: attachBlue}">BLUE</div>
+        <div class="demo" @click="attachGreen = !attachGreen" :class="{green: attachGreen}">GREEN</div>
+        <p><mark>Click on any of the blocks to attach a css class!</mark></p>
+        <hr>
+        <h3>Changing all the divs at once using a computed property</h3>
+        <div class="demo" @click="attachRed = !attachRed" :class="divClasses">RED</div>
+        <div class="demo" @click="attachBlue = !attachBlue" :class="divClasses">BLUE</div>
+        <div class="demo" @click="attachGreen = !attachGreen" :class="divClasses">GREEN</div>
+        <p><kbd>💡 The CSS class here is attached by a computed property to all the blocks at once</kbd></p>
+        <hr>
+        <h3>Setting the classes using names</h3>
+        <input type="text" v-model="color"><br>
+        <div class="demo" :class="color">Property</div>
+        <!-- The array syntax allows you to use multiple arguments / conditions -->
+        <!-- Behind the scenes VueJS uses key-value pairs when you use the object notation -->
+        <div class="demo" :class="[color, {red: attachRed}]">Array</div>
+        <hr>
+        <h3>Directly manipulating styles 😏</h3>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width"><br>
+        <!-- Note that the dash (-) is not a valid character when interactin in the dom with Vue 
+             Solution 1: encapsulate in single quotes: {'background-color:'}
+             Solution 2: replace the dash with camelCase: {backgroundColor} | Vue does the magic behind the scenes
+
+             As an added bonus VueJS will also automatically prefix css when required for specific browsers
+        -->
+        <div class="demo" :style="{'backgroundColor': color}">Styled!</div>
+        <div class="demo" :style="[computedStyle, {height: width + 'px'}]">Computed!</div>
+        <hr>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            attachRed: false,
+            attachBlue: false,
+            attachGreen: false,
+            color: 'green',
+            width: 110,
+        },
+        computed: {
+            divClasses: function (event) {
+                return {
+                    red: this.attachRed,
+                    blue: this.attachBlue,
+                    green: this.attachGreen,
+                };
+            },
+            computedStyle: function () {
+                // Note that Vue expects an object to be returned here
+                return {
+                    backgroundColor: this.color,
+                    width: this.width + 'px',
+                };
+            }
+        },
+    });
+</script>
+
+</html>

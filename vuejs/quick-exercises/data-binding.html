@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../spectre.min.css">
+    <style>
+        body {
+            margin: 1rem;
+        }
+
+        p {
+            margin-top: .5rem;
+        }
+    </style>
+    <title>Using Two Way Data Binding</title>
+</head>
+
+<body>
+    <div id="app">
+        <hr>
+        <h3>This is an example of two way databinding</h3>
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+
+        <hr>
+        <h3>Showcasing why you want computed properties</h3>
+        <!-- In VueJS the data property (this.data) is NOT reactive! -->
+        <button class="btn" v-on:click="increase">Increase</button>
+        <button class="btn" v-on:click="decrease">Decrease</button>
+        <p>Counter: {{ counter }}</p>
+
+        <hr>
+        <h3>This is how you do it with computed properties</h3>
+        <button class="btn" v-on:click="counter++">Increase</button>
+        <button class="btn" v-on:click="counter--">Decrease</button>
+
+        <!-- This second button is the reason that we WANT the computed property, 
+             because clicking this button would cause the first counters to also be
+             re-evaluated because Vue has no way of telling if they are updated or not
+        -->
+        <button class="btn" v-on:click="secondCounter++">Increase second counter</button>
+        <p>Counters: {{ counter }} | {{ secondCounter }}</p>
+        <p>Result: {{ result }}</p>
+
+        <!-- The cool thing here is that when the page loads this will already output the result, 
+             whilst the result above is still blank, because the function has not yet been called
+        -->
+        <p>Computed result: {{ computedOutput() }} | {{ computedResult }}</p>
+        <!-- <p>Computed result: {{ computedOutput() }}</p> would call this everytime and not only on changes -->
+
+        <hr>
+        <h3>Watch is another way of reacting to data changes</h3>
+        <p><kbd>Please check the console log to see what the watchers sees!</kbd></p>
+        <button class="btn" v-on:click="watchedCounter++">Increase watched counter</button>
+        <p>Counter with watcher: {{ watchedCounter }} <br><mark>This counter will automatically reset after the timeout
+                is reached!</mark></p>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'placeholder text from initial data',
+            counter: 0,
+            result: '',
+            secondCounter: 0,
+            watchedCounter: 0,
+        },
+        computed: {
+            // The below is basically the same as the Vanilla JS function, but now
+            // VueJS knows that the output depends on something else and will only 
+            // re-evaluate if the depency has changes applied to it
+            computedResult: function () {
+                // Proving the difference in calls by logging
+                console.log('Computed property called!');
+                return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+            },
+        },
+        watch: {
+            // The watcher kind of works the other way around.
+            // In computed you specify the logic on how the property should be computed
+            // In watch you set up the property you want to watch and as a function you set up
+            // the function you want to run when the data changes. This allows you to react to
+            // changes.
+            // It is best practice to use computed over watches for performance reasons
+            // HOWEVER:
+            // Computed: always sync, NO async
+            // Watches: supports async
+            watchedCounter: function (value) {
+                console.log('The watcher sees what you are up too!');
+                console.log(value);
+                // In watchers you can no longer access the entire Vue Model directly so you have to bind it to a local variable
+                const vm = this;
+
+                // Note that there is no return only code that needs to be run when the watched property updates!
+                setTimeout(function () {
+                    vm.watchedCounter = 0;
+                }, 1500);
+            }
+        },
+        methods: {
+            increase: function () {
+                this.counter++;
+                this.result = this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+            },
+            decrease: function () {
+                this.counter--;
+                this.result = this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+            },
+            // This is the non VueJS way of doing it
+            // Is already an improvement, because you now have 1 source of handling the result
+            computedOutput: function () {
+                console.log('Method for calculating output called!');
+                return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+            }
+        }
+    })
+</script>
+
+</html>
