@@ -1,0 +1,27 @@
+---
+categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
+entries:
+  - title: This is the title of your second T.I.L. entry
+    date: "2024.07.14"  # You can put the date here in any format you like (the template treats it as text)
+    category: This is the category for your second T.I.L. entry
+    content: |
+      # This is raw markdown content!
+
+      > it is pretty sexy!
+    sources:
+      - text: "The text you want to display for this link"
+        link: "https://example.com"
+    tags: put, any, tag, you, like, here
+# - END OF POST | you can remove this comment, but I keep it here for legibility of this file
+  - title: This is the title of your first T.I.L. entry
+    date: "2024.07.13"  # You can put the date here in any format you like (the template treats it as text)
+    category: This is the category for your first T.I.L. entry
+    content: |
+      **This is raw markdown content!**
+
+      `it is pretty sexy!`
+    sources:
+      - text: "The text you want to display for this link"
+        link: "https://example.com"
+    tags: put, any, tag, you, like, here
+# - END OF POST | you can remove this comment, but I keep it here for legibility of this file

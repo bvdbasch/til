@@ -1,0 +1,22 @@
+# TIL: Today I Learned
+> [!NOTE]
+> {{ entries | length }} TILs in {{ categories | length }} different categories and counting..
+
+This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant a full-fledged blog post. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
+
+## Categories
+
+{% for category in categories %}
++ [{{ category | capitalize }}](#{{ category | lower }})
+{% endfor %}
+{% for category in categories %}
+
+### {{ category | capitalize }}
+
+{% for entry in entries if entry['category'] == category %}
++ [{{ entry['title'] }}]({{ entry['category'] }}/{{ entry['title'] | lower | regex_replace('[^A-Za-z0-9]', '-') }}.md)
+{% endfor %}
+{% endfor %}
+
+## Attribution
+🥳 The script I used to generate the Markdown files, and README.md in this repository are forked from [bvdbasch/til](https://github.com/bvdbasch/til)
