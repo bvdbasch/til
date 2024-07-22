@@ -4,6 +4,10 @@
 
 {{ item['content'] }}
 ## Sources
+{% if item['sources'] is defined %}
 {% for keys in item['sources'] %}
 + [{{ keys['text'] }}]({{ keys['link'] }})
 {% endfor %}
+{% else %}
+Figured this one out myself 🥳
+{% endif %}
