@@ -1,0 +1,36 @@
+---
+# This playbook takes the entries from entries.yml and spits out neatly formatted Markdown files in their own directory
+# The playbook also generates a README file automatically
+- name: Organize and publish Today I Learned (TIL) entries on GitHub automatically
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  vars_files:
+    - "{{ playbook_dir  }}/entries.yml"
+
+  tasks:
+    - name: Process all TIL entries
+      block:
+        # Ansible cannot loop over an entire block, so this workaround is required
+        - name: Loop over a group of tasks
+          ansible.builtin.include_tasks:
+            file: "{{ playbook_dir }}/block_loop.yml"
+          loop: "{{ entries }}"
+
+    # After processing all entries, cleanup and sort the entries and categories
+    - name: Clean up and sort the categories list
+      ansible.builtin.set_fact:
+        categories: "{{ categories | unique | sort }}"
+
+    - name: Clean up and sort the entries list
+      ansible.builtin.set_fact:
+        entries: "{{ entries | sort(attribute='title') }}"
+
+    # Generate a new README.md  | Note: no loop required here; looping is performed within the template itself
+    - name: Generate new README.md
+      ansible.builtin.template:
+        src: "{{ playbook_dir }}/README.md.j2"
+        dest: "{{ playbook_dir }}/README.md"
+        mode: "0644"

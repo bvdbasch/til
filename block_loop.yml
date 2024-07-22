@@ -1,0 +1,16 @@
+---
+- name: Add the category of the current entry to the category list
+  ansible.builtin.set_fact:
+    categories: "{{ categories + [item['category']] }}"
+
+- name: Ensure the template output destination exists on the target host
+  ansible.builtin.file:
+    path: "{{ playbook_dir }}/{{ item['category'] }}"
+    state: directory
+    mode: "0744"
+
+- name: Template out the current TIL entry from entry.md.j2 to a Markdown file
+  ansible.builtin.template:
+    src: "{{ playbook_dir }}/entry.md.j2"
+    dest: "{{ playbook_dir }}/{{ item['category'] }}/{{ item['title'] | lower | regex_replace('[^A-Za-z0-9]', '-') }}.md"
+    mode: "0644"

@@ -1,0 +1,14 @@
+---
+# https://taskfile.dev
+version: '3'
+
+tasks:
+  default:
+    desc: Generate all TIL files and push them to a target git repository
+    dir: "{{.ROOT_DIR}}"
+    aliases:
+      - generate
+    cmds:
+      - rm README.md
+      - ansible-playbook generate.yml
+    silent: true
