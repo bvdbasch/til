@@ -28,3 +28,20 @@ entries:
         link: "http://osxdaily.com/2011/01/26/change-the-screenshot-save-file-location-in-mac-os-x/"
     tags: apple, macos, screenshots, plist
 # - END OF POST
+  - title: Make TextEdit.app on MacOS behave more like Windows Notepad (notepad.exe)
+    date: "2024.04.05"
+    category: macos
+    content: |
+      Say what you will about Windows, but Notepad.exe is a great tool. It just treats text as plain text. When first switching to MacOS you come to find that Notepad.exe is TextEdit.app, but the problem is that well... It doesn't do plain text out of the box. Instead it does rich text formatting. Fortunately Apple gave us the ability to set plain text as the default. Hurray!
+
+      Here's how to do it:
+
+      1. Open settings (`⌘` + `,`)
+      2. On the `New Document` tab in the settings window select the option `Plain text`
+
+      Going forward any new document you create in TextEdit will automatically be in plain text and will be saved as a .txt file. YES!
+    sources:
+      - text: "How to use .txt Plain Text by default in TextEdit"
+        link: "https://www.idownloadblog.com/2016/12/26/how-to-use-plain-text-by-default-in-textedit/"
+    tags: apple, macos, notepad, notepad++, textedit, plain-text
+# - END OF POST
