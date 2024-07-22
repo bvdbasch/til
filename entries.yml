@@ -1,0 +1,13 @@
+---
+categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
+entries:
+  - title:
+    date:
+    category:
+    content: |
+      This is raw markdown content!
+    sources:
+      - text:
+        link:
+    tags:
+# - END OF POST

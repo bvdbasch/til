@@ -1,0 +1,9 @@
+# {{ item['title'] }}
+> 🕰️ logged on {{ item['date'] }}
+> 🔖 tagged: {{ item['tags'] }}
+
+{{ item['content'] }}
+## Sources
+{% for keys in item['sources'] %}
++ [{{ keys['text'] }}]({{ keys['link'] }})
+{% endfor %}
