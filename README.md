@@ -1,6 +1,6 @@
 # TIL: Today I Learned
 > [!NOTE]
-> 3 TILs in 2 different categories and counting..
+> 1 TILs in 1 different categories and counting..
 
 This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant full-fledged blog posts. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
 
@@ -13,11 +13,10 @@ I also keep track of my more off-the-cuff style experiments in this repository. 
 
 If you want to start keeping track of your own journey, feel free to fork this repository 👍
 
-After forking the repository follow the steps below:
+After forking the repository the workflow is roughly:
 
 1. Write a new entry in the file entries.yml whenever you learn something (ideally you do this every day).
 2. Run the Ansible playbook called `generate.yml`. You can do so by running the following command: `ansible-playbook generate.yml`
-3. The Ansible playbook
 
 ### Tweaking the output
 The Ansible playbook generates all the Markdown files you see in this repository. Ansible uses the [Jinja2 template engine](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_templating.html) to this end.
@@ -31,3 +30,11 @@ Make any change you see fit to those templates and then run the Ansible playbook
 
 ## Inspiration
 I became inspired to make this repository [after stumbling upon](https://news.ycombinator.com/item?id=11068902) the [awesome TIL repo](https://github.com/jbranchaud/til) maintained by [Josh Branchaud](https://github.com/jbranchaud). I was blown away by what a small daily effort can produce over the course of several years, Mad respect for showing us the way my dude 🤵🏻‍♂️
+
+## Categories
+
++ [Macos](#macos)
+
+### Macos
+
++ [Change the default folder when saving screenshots on MacOS](macos/change-the-default-folder-when-saving-screenshots-on-macos.md)
