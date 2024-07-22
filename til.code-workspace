@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "🎒 Playground (playground)",
+      "path": "playground"
+    },
+    {
+      "name": "✨ root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.showBreakpointsInOverviewRuler": true,
+    "workbench.editor.labelFormat": "medium"
+  }
+}
