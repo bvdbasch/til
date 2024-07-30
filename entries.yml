@@ -94,3 +94,20 @@ entries:
       2. Clone the repository directly in that directory
       3. Reload your shell and voila! Now you can use the plugin
     tags: shell, unix, zsh, plugins, antigen
+# - END OF POST
+  - title: Setting up a new Python virtual environment with Poetry and PyEnv
+    date: "2024.01.11"
+    category: python
+    content: |
+      Today I had to set up a small python project from scratch rather than continuing from a pre-existing project. Since I've only had to deal with projects already containing a `pyproject.toml` this was a new experience for me. Here's how I did it
+
+      ## Create the environment, add the dependencies and jump into the shell
+      > [!NOTE]
+      > Prerequisites: [PyEnv](https://github.com/pyenv/pyenv) and [Poetry](https://github.com/python-poetry/poetry)
+
+      ```sh
+      $ cd <target_dir>
+      $ poetry init  # follow on the on screen instructions
+      $ poetry shell # spawn environment shell
+      ```
+    tags: python, poetry, dependency-management, pyenv, venv
