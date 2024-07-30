@@ -1,5 +1,5 @@
 # Change the default folder when saving screenshots on MacOS
-> 🕰️ logged on 2024.07.02
+> 🕰️ logged on 2024.07.02 <br>
 > 🔖 tagged: apple, macos, screenshots, plist
 
 By default MacOS saves all screenshots to your desktop. This may be fine for some, but for me it is far from ideal. I'd rather have the screenshots saved to a dedicated screenshots folder. The commands below achieve that.

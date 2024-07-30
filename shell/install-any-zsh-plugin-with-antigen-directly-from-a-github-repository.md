@@ -1,5 +1,5 @@
 # Install any zsh plugin with antigen directly from a github repository
-> 🕰️ logged on 2024.01.24
+> 🕰️ logged on 2024.01.24 <br>
 > 🔖 tagged: shell, unix, zsh, plugins, antigen
 
 Sometimes a shell plugin has instructions on how to install itself with antigen. For example [popstas/zsh-command-time](https://github.com/popstas/zsh-command-time) has the following instructions [in their README](https://github.com/popstas/zsh-command-time?tab=readme-ov-file#install-with-antigen):

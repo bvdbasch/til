@@ -1,5 +1,5 @@
 # Make TextEdit.app on MacOS behave more like Windows Notepad (notepad.exe)
-> 🕰️ logged on 2024.04.05
+> 🕰️ logged on 2024.04.05 <br>
 > 🔖 tagged: apple, macos, notepad, notepad++, textedit, plain-text
 
 Say what you will about Windows, but Notepad.exe is a great tool. It just treats text as plain text. When first switching to MacOS you come to find that Notepad.exe is TextEdit.app, but the problem is that well... It doesn't do plain text out of the box. Instead it does rich text formatting. Fortunately Apple gave us the ability to set plain text as the default. Hurray!
