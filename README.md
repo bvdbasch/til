@@ -1,6 +1,6 @@
 # TIL: Today I Learned
 > [!NOTE]
-> 5 TILs in 4 different categories and counting...
+> 6 TILs in 4 different categories and counting...
 
 This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant full-fledged blog posts. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
 
@@ -46,6 +46,7 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 
 + [Change the default folder when saving screenshots on MacOS](macos/change-the-default-folder-when-saving-screenshots-on-macos.md)
 + [Make TextEdit.app on MacOS behave more like Windows Notepad (notepad.exe)](macos/make-textedit-app-on-macos-behave-more-like-windows-notepad--notepad-exe-.md)
++ [Pin a file or folder to the dock in MacOS](macos/pin-a-file-or-folder-to-the-dock-in-macos.md)
 
 ### Python
 

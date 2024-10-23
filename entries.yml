@@ -1,6 +1,25 @@
 ---
 categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
 entries:
+  - title: Pin a file or folder to the dock in MacOS
+    date: "2024.10.23"
+    category: macos
+    content: |
+      When attempting to drag a file or folder straight from finder into the dock, you might be suprised to discover that this does not work. Quite strange when you consider most actions in macOS are very much drag-drop oriented.
+
+      However, not being able to simply drag a file into the dock doesn't mean it is impossible. Here's how to do it:
+
+      > [!TIP]
+      > Pressing `control` + `shift` + `⌘` + `T` is the keyboard shortcut for "Add to Dock" when a file or folder is highlighted in Finder!
+
+      1. Within finder navigate to the file or you'd like to pin to the dock.
+      2. In the global menu click on the `File` menu option while holding down the `shift` key on the keyboard.
+      3. Click the *Add to Dock* option and the file or folder will now be pinned to the dock!
+    sources:
+      - text: "How to Pin a Folder or a File to Your Mac's Dock"
+        link: "https://www.howtogeek.com/712237/how-to-pin-a-folder-or-a-file-to-your-macs-dock/"
+    tags: apple, macos, dock, finder
+# - END OF POST
   - title: Viewing the status of a specific service
     date: "2024.07.30"
     category: linux
@@ -35,7 +54,7 @@ entries:
     date: "2024.07.02"
     category: macos
     content: |
-      By default MacOS saves all screenshots to your desktop. This may be fine for some, but for me it is far from ideal. I'd rather have the screenshots saved to a dedicated screenshots folder. The commands below achieve that.
+      By default MacOS saves all screenshots to your desktop. This may be fine for some, but for me it is far from ideal. I'd rather have th e screenshots saved to a dedicated screenshots folder. The commands below achieve that.
 
       ```zsh
       $ defaults write com.apple.screencapture location <new_folder_location>
@@ -62,7 +81,7 @@ entries:
     date: "2024.04.05"
     category: macos
     content: |
-      Say what you will about Windows, but Notepad.exe is a great tool. It just treats text as plain text. When first switching to MacOS you come to find that Notepad.exe is TextEdit.app, but the problem is that well... It doesn't do plain text out of the box. Instead it does rich text formatting. Fortunately Apple gave us the ability to set plain text as the default. Hurray!
+      Say what you will about Windows, but Notepad.exe is a great tool. It just treats text as plain text. When first switching to macOS you come to find that Notepad.exe is TextEdit.app, but the problem is that well... It doesn't do plain text out of the box. Instead it does rich text formatting. Fortunately Apple gave us the ability to set plain text as the default. Hurray!
 
       Here's how to do it:
 
