@@ -5,7 +5,7 @@
 This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant full-fledged blog posts. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
 
 ## The playground folder
-I also keep track of my more off-the-cuff style experiments in this repository. I thought it would be nice to have a public archive of my experiments on the road to becoming a better developer. These undertakings can be found in the I have bundled them in the [📁 playground folder](/playground)
+I also keep track of my more off-the-cuff style experiments in this repository. I thought it would be nice to have a public archive of my experiments on the road to becoming a better developer. I have bundled these undertakings in the [📁 playground folder](/playground).
 
 ## Usage (aka I want this, how do I get it?)
 > [!IMPORTANT]
