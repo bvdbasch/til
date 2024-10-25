@@ -7,10 +7,10 @@ entries:
     content: |
       When attempting to drag a file or folder straight from finder into the dock, you might be suprised to discover that this does not work. Quite strange when you consider most actions in macOS are very much drag-drop oriented.
 
-      However, not being able to simply drag a file into the dock doesn't mean it is impossible. Here's how to do it:
-
       > [!TIP]
       > Pressing `control` + `shift` + `⌘` + `T` is the keyboard shortcut for "Add to Dock" when a file or folder is highlighted in Finder!
+
+      However, not being able to simply drag a file into the dock doesn't mean it is impossible. Here's how to do it:
 
       1. Within finder navigate to the file or you'd like to pin to the dock.
       2. In the global menu click on the `File` menu option while holding down the `shift` key on the keyboard.
@@ -19,6 +19,24 @@ entries:
       - text: "How to Pin a Folder or a File to Your Mac's Dock"
         link: "https://www.howtogeek.com/712237/how-to-pin-a-folder-or-a-file-to-your-macs-dock/"
     tags: apple, macos, dock, finder
+# - END OF POST
+  - title: Using the present working directory as a value for your environment variables
+    date: "2024.10.10"
+    category: linux
+    content: |
+      I use a [custom git-cliff configuration](https://github.com/bvdbasch/dotfiles/blob/master/roles/git/templates/cliff.toml.j2) for generating changelogs. The changelog it produces is fantastic, but unfortunately - by default - git-cliff does *not* export the generated changelog to a file.
+
+      There is an environment variable you can set called `GIT_CLIFF_OUTPUT` which will instruct git-cliff to always store the generated changelog in that location. Great, but what about multiple projects in multiple locations?
+
+      Well, I realized that when you're asking git-cliff to generate a changelog you are most likely already in the project folder, so using the current directory as the value for the output location would work. We know the `pwd` command (present working directory) produces the exact output we need, but simply putting this into an the environment variable **will not work**.
+
+      To be very clear: `GIT_CLIFF_OUTPUT="pwd/CHANGELOG.md"` will not do anything, because pwd gets treated as text and not as a command. So how do we make sure that it does get treated as a command? Simple: just wrap it in parenthesis and prepend it with a dollar sign `$(pwd)` :D
+
+      So the final solution is: `GIT_CLIFF_OUTPUT="$(pwd)/CHANGELOG.md"`, which will create the changelog in the current directory. Perfect.
+    sources:
+      - text: "This saves the absolute path of the current working directory to the variable cwd"
+        link: "https://stackoverflow.com/a/13275062"
+    tags: devops, shell, scripting, zsh, git, git-cliff
 # - END OF POST
   - title: Viewing the status of a specific service
     date: "2024.07.30"
