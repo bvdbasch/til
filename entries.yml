@@ -1,6 +1,24 @@
 ---
 categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
 entries:
+  - title: Combining multiple files into a PDF on Mac
+    date: "2025.01.23"
+    category: macos
+    content: |
+      I found a backup of an old NES manual where someone had scanned each page separately and then bundled all the images in a single `.zip` file. For my purposes I wanted to have all the images in a single PDF though. Luckily you can quickly combine multiple files into a PDF right from your desktop or a finder window.
+
+      Here's how to do it:
+
+      1. Select the files you want to combine
+      2. Right-click the selected files and then choose quick actions
+      3. From the quick actions menu select `Create PDF`.zip
+
+      That's it! Enjoy your new PDF document 😎
+    sources:
+      - text: "Combine files into a PDF on Mac"
+        link: "https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac"
+    tags: apple, macos, pdf, quick-actions
+# - END OF POST
   - title: Pin a file or folder to the dock in MacOS
     date: "2024.10.23"
     category: macos
