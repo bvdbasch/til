@@ -1,6 +1,6 @@
 # TIL: Today I Learned
 > [!NOTE]
-> 8 TILs in 4 different categories and counting...
+> 10 TILs in 5 different categories and counting...
 
 This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant full-fledged blog posts. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
 
@@ -36,6 +36,7 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 + [Linux](#linux)
 + [Macos](#macos)
 + [Python](#python)
++ [Security](#security)
 + [Shell](#shell)
 
 ### Linux
@@ -46,6 +47,7 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 ### Macos
 
 + [Change the default folder when saving screenshots on MacOS](macos/change-the-default-folder-when-saving-screenshots-on-macos.md)
++ [Combining multiple files into a PDF on Mac](macos/combining-multiple-files-into-a-pdf-on-mac.md)
 + [Enable using Touch ID for sudo commands](macos/enable-using-touch-id-for-sudo-commands.md)
 + [Make TextEdit.app on MacOS behave more like Windows Notepad (notepad.exe)](macos/make-textedit-app-on-macos-behave-more-like-windows-notepad--notepad-exe-.md)
 + [Pin a file or folder to the dock in MacOS](macos/pin-a-file-or-folder-to-the-dock-in-macos.md)
@@ -53,6 +55,10 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 ### Python
 
 + [Setting up a new Python virtual environment with Poetry and PyEnv](python/setting-up-a-new-python-virtual-environment-with-poetry-and-pyenv.md)
+
+### Security
+
++ [Securely wipe a disk in Linux](security/securely-wipe-a-disk-in-linux.md)
 
 ### Shell
 

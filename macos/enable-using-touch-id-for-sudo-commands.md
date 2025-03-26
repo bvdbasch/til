@@ -10,7 +10,7 @@
 
 I was recently handed a new company Macbook with device management policies. A strong password policy is enforced on the machine (as it should). However, this is quite the hassle with sudo (spare my fingers plzzzz) so I needed a method to authorize sudo commands with Touch ID. Luckily this was really straightforward by following the steps underneath.
 
-1. Create a file called `sudo_local.j2` in /etc/pam.d
+1. Create a file called `sudo_local.j2` in `/etc/pam.d`.
 2. Ensure the file has the following line: `auth       sufficient     pam_tid.so`
 3. Restart your terminal
 4. Done

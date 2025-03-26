@@ -1,6 +1,6 @@
 # Pin a file or folder to the dock in MacOS
 > 🕰️ logged on 2024.10.23 <br>
-> 🔖 tagged: apple, macos, dock, finder
+> 🔖 tagged: apple, macos, dock, finder, workflow, productivity
 
 When attempting to drag a file or folder straight from finder into the dock, you might be suprised to discover that this does not work. Quite strange when you consider most actions in macOS are very much drag-drop oriented.
 

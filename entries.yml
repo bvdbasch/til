@@ -19,6 +19,27 @@ entries:
         link: "https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac"
     tags: apple, macos, pdf, quick-actions
 # - END OF POST
+  - title: Securely wipe a disk in Linux
+    date: "2024.12.02"
+    category: security
+    content: |
+      New laptop. Bring back old. Always do zhe wipe! Forgot how to do it because it has been so long.
+
+      Many different utils, but shred be my fav.
+
+      My process:
+      - rm files from terminal first
+      - then wipe entire disk with shred.
+      - I use this command: `shred <disk> -
+      - sudo shred -v -n 1 -z /dev/sda
+      verbose so we see the progress, 1 pass is enough, do a last pass with all 0 to make it look like a blank disk
+    sources:
+      - text: "3 Best Ways to Securely Wipe Disk in Linux"
+        link: "https://linuxiac.com/best-ways-to-securely-erase-disk-in-linux/"
+      - text: "How to Securely Erase a Disk and File using the Linux shred Command"
+        link: "https://www.freecodecamp.org/news/securely-erasing-a-disk-and-file-using-linux-command-shred/"
+    tags: linux, unix, shell, data-protection
+# - END OF POST
   - title: Pin a file or folder to the dock in MacOS
     date: "2024.10.23"
     category: macos
@@ -36,7 +57,7 @@ entries:
     sources:
       - text: "How to Pin a Folder or a File to Your Mac's Dock"
         link: "https://www.howtogeek.com/712237/how-to-pin-a-folder-or-a-file-to-your-macs-dock/"
-    tags: apple, macos, dock, finder
+    tags: apple, macos, dock, finder, workflow, productivity
 # - END OF POST
   - title: Using the present working directory as a value for your environment variables
     date: "2024.10.10"
