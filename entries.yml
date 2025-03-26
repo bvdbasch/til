@@ -13,6 +13,18 @@ entries:
         link: "https://apple.stackexchange.com/questions/119953/minimize-all-windows-except-active"
     tags: apple, macos, productivity, workflow, keyboard-shortcuts
 # - END OF POST
+  - title: Showing Swatch Internet time in your terminal (.beats)
+    date: "2025.03.17"
+    category: linux
+    content: |
+      I am sucker for [Swatch Internet Time](https://www.wnyc.org/story/15-internet-time/) and wanted to add it to my zsh prompt.
+
+      Here is the command line magic that made it happen: `echo '@'$(TZ=GMT-1 date +'(%-S + %-M * 60 + %-H * 3600) / 86.4'|bc)`
+    sources:
+      - text: "Bash alias to output the current Swatch Internet Time"
+        link: "https://www.commandlinefu.com/commands/view/25323/bash-alias-to-output-the-current-swatch-internet-time"
+    tags: devops, shell, scripting, zsh, swatch, internet-time, .beats
+# - END OF POST
   - title: Combining multiple files into a PDF on Mac
     date: "2025.01.23"
     category: macos
