@@ -1,6 +1,18 @@
 ---
 categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
 entries:
+  - title: Hiding all windows except the currently active window on Mac
+    date: "2025.03.26"
+    category: macos
+    content: |
+      Sometimes I like to keep distraction to a minimum and just have the current window floating on the background. Hiding all windows individually is a pain.  Fortunately there is an option to hide all windows except the currently active window!
+
+      Here's the keyboard shortcut: `alt ⌥` + `cmd ⌘` + `H`
+    sources:
+      - text: "MInimize all windows except active"
+        link: "https://apple.stackexchange.com/questions/119953/minimize-all-windows-except-active"
+    tags: apple, macos, productivity, workflow, keyboard-shortcuts
+# - END OF POST
   - title: Combining multiple files into a PDF on Mac
     date: "2025.01.23"
     category: macos
