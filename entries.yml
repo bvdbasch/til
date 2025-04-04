@@ -1,6 +1,35 @@
 ---
-categories: []  # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
+categories: [] # This variable gets populated when the playbook runs | Note [] tells Ansible this var should hold a list
 entries:
+  - title: Highlighting matching brackets in Zed
+    date: "2025.03.26"
+    category: zed
+    content: |
+      I'm currently trying out Zed as an editor for my personal projects. Although I am very impressed, Zed does have its shortcomings...
+
+      In its current state Zed does not support rainbow brackets. I find this to be quite cumbersome as I'm not able to glance if there are missing brackets in a large chunk of code; this is not optimal for my productivity to say the least.
+
+      Fortunately [OddMastodon4038 on Reddit](https://old.reddit.com/r/ZedEditor/comments/1er81tt/is_bracket_highlighting_a_feature/lhymm51/) had a nice workaround that I actually ended up liking way more than using full-on rainbow brackets. Zed is quite minimal and after enabling only the bare minimal productivity ~~distractions~~ features I actually noticed being able to focus better! Neat!
+
+      > [!Tip]
+      > You can find my full Zed configuration file in [my dotfiles repository](https://github.com/bvdbasch/dotfiles/tree/master/roles/zed)!
+
+      Anway, here are the highlighting settings I've used:
+      ```json
+      "indent_guides": {
+        "background_coloring": "disabled",
+        "coloring": "indent_aware",
+        "active_line_width": 1
+      },
+      "experimental.theme_overrides": {
+        "editor.document_highlight.read_background": "#6A3D88"
+      }
+      ```
+    sources:
+      - text: "Is bracket highlighting a feature?"
+        link: "https://old.reddit.com/r/ZedEditor/comments/1er81tt/is_bracket_highlighting_a_feature/lhymm51/"
+    tags: development, ide, editors, code-highlighting
+  # - END OF POST
   - title: Hiding all windows except the currently active window on Mac
     date: "2025.03.26"
     category: macos
@@ -12,7 +41,7 @@ entries:
       - text: "MInimize all windows except active"
         link: "https://apple.stackexchange.com/questions/119953/minimize-all-windows-except-active"
     tags: apple, macos, productivity, workflow, keyboard-shortcuts
-# - END OF POST
+  # - END OF POST
   - title: Showing Swatch Internet time in your terminal (.beats)
     date: "2025.03.17"
     category: linux
@@ -24,7 +53,7 @@ entries:
       - text: "Bash alias to output the current Swatch Internet Time"
         link: "https://www.commandlinefu.com/commands/view/25323/bash-alias-to-output-the-current-swatch-internet-time"
     tags: devops, shell, scripting, zsh, swatch, internet-time, .beats
-# - END OF POST
+
   - title: Combining multiple files into a PDF on Mac
     date: "2025.01.23"
     category: macos
@@ -42,7 +71,7 @@ entries:
       - text: "Combine files into a PDF on Mac"
         link: "https://support.apple.com/guide/mac-help/combine-files-into-a-pdf-mchl21ac2368/mac"
     tags: apple, macos, pdf, quick-actions
-# - END OF POST
+  # - END OF POST
   - title: Securely wipe a disk in Linux
     date: "2024.12.02"
     category: security
@@ -63,7 +92,7 @@ entries:
       - text: "How to Securely Erase a Disk and File using the Linux shred Command"
         link: "https://www.freecodecamp.org/news/securely-erasing-a-disk-and-file-using-linux-command-shred/"
     tags: linux, unix, shell, data-protection
-# - END OF POST
+  # - END OF POST
   - title: Pin a file or folder to the dock in MacOS
     date: "2024.10.23"
     category: macos
@@ -82,7 +111,7 @@ entries:
       - text: "How to Pin a Folder or a File to Your Mac's Dock"
         link: "https://www.howtogeek.com/712237/how-to-pin-a-folder-or-a-file-to-your-macs-dock/"
     tags: apple, macos, dock, finder, workflow, productivity
-# - END OF POST
+  # - END OF POST
   - title: Using the present working directory as a value for your environment variables
     date: "2024.10.10"
     category: linux
@@ -100,7 +129,7 @@ entries:
       - text: "This saves the absolute path of the current working directory to the variable cwd"
         link: "https://stackoverflow.com/a/13275062"
     tags: devops, shell, scripting, zsh, git, git-cliff
-# - END OF POST
+  # - END OF POST
   - title: Viewing the status of a specific service
     date: "2024.07.30"
     category: linux
@@ -130,7 +159,7 @@ entries:
       - text: "How to view status of a service on Linux using systemctl"
         link: "https://www.cyberciti.biz/faq/systemd-systemctl-view-status-of-a-service-on-linux/"
     tags: devops, shell, sudo, services, logging, unix
-# - END OF POST
+  # - END OF POST
   - title: Change the default folder when saving screenshots on MacOS
     date: "2024.07.02"
     category: macos
@@ -157,7 +186,7 @@ entries:
       - text: "How to change the default screenshot save location"
         link: "http://osxdaily.com/2011/01/26/change-the-screenshot-save-file-location-in-mac-os-x/"
     tags: apple, macos, screenshots, plist
-# - END OF POST
+  # - END OF POST
   - title: Make TextEdit.app on MacOS behave more like Windows Notepad (notepad.exe)
     date: "2024.04.05"
     category: macos
@@ -174,7 +203,7 @@ entries:
       - text: "How to use .txt Plain Text by default in TextEdit"
         link: "https://www.idownloadblog.com/2016/12/26/how-to-use-plain-text-by-default-in-textedit/"
     tags: apple, macos, notepad, notepad++, textedit, plain-text
-# - END OF POST
+  # - END OF POST
   - title: Install any zsh plugin with antigen directly from a github repository
     date: "2024.01.24"
     category: shell
@@ -194,7 +223,7 @@ entries:
       2. Clone the repository directly in that directory
       3. Reload your shell and voila! Now you can use the plugin
     tags: shell, unix, zsh, plugins, antigen
-# - END OF POST
+  # - END OF POST
   - title: Setting up a new Python virtual environment with Poetry and PyEnv
     date: "2024.01.11"
     category: python
@@ -211,7 +240,7 @@ entries:
       $ poetry shell # spawn environment shell
       ```
     tags: python, poetry, dependency-management, pyenv, venv
-# - END OF POST
+  # - END OF POST
   - title: Enable using Touch ID for sudo commands
     date: "2023.05.17"
     category: macos

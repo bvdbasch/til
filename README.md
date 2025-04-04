@@ -1,6 +1,6 @@
 # TIL: Today I Learned
 > [!NOTE]
-> 12 TILs in 5 different categories and counting...
+> 13 TILs in 6 different categories and counting...
 
 This repository contains a collection of concise write-ups on small things I've learned in my day to day journey as a developer. They cover a wide variety of languages and technologies. These are things that don't really warrant full-fledged blog posts. In fact, most of the entries in this repository either answer a simple question and are more of a how-to document than they are a journal type entry.
 
@@ -38,6 +38,7 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 + [Python](#python)
 + [Security](#security)
 + [Shell](#shell)
++ [Zed](#zed)
 
 ### Linux
 
@@ -65,3 +66,7 @@ I became inspired to make this repository [after stumbling upon](https://news.yc
 ### Shell
 
 + [Install any zsh plugin with antigen directly from a github repository](shell/install-any-zsh-plugin-with-antigen-directly-from-a-github-repository.md)
+
+### Zed
+
++ [Highlighting matching brackets in Zed](zed/highlighting-matching-brackets-in-zed.md)
