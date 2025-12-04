@@ -1,6 +1,13 @@
 # Editors
 .vscode
-wip-posts.md
+.zed
 
 # Ansible
 .ansible
+
+# Drafts
+wip-posts.md
+
+# Rust
+**/target
+**/rust-by-practice

@@ -26,7 +26,7 @@ This repository contains the following two template files:
 1. [A template for the main README](README.md.j2) - responsible for the file you are reading right now
 2. [A template for individual entries](entry.md.j2) - responsible for the files in the individual folders
 
-Make any change you see fit to those templates and then run the Ansible playbook again to see your changes take effect. Of course [don't forget to show me the awesome changes you make](https://github.com/bvdbasch/til/discussions/categories/show-and-tell) 💪 (I want to know 😳). And if you're stuck don't be affraid to [head over to the Q&A category of the discussions](https://github.com/bvdbasch/til/discussions/categories/q-a) in this repository and feel free ask for help!
+Make any change you see fit to those templates and then run the Ansible playbook again to see your changes take effect. Of course [don't forget to show me the awesome changes you make](https://github.com/bvdbasch/bvdbasch/discussions/categories/t-i-l-today-i-learned) 💪 (I want to know 😳). And if you're stuck don't be affraid to [head over to the issues tab](https://github.com/bvdbasch/til/issues) in this repository and feel free ask for help!
 
 ## Inspiration
 I became inspired to make this repository [after stumbling upon](https://news.ycombinator.com/item?id=11068902) the [awesome TIL repo](https://github.com/jbranchaud/til) maintained by [Josh Branchaud](https://github.com/jbranchaud). I was blown away by what a small daily effort can produce over the course of several years! Mad respect for showing us the way my dude 🤵🏻‍♂️
